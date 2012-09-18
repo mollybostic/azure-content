@@ -18,6 +18,8 @@ By following this tutorial, you will build a simple Tasklist web application in 
 
 ![Windows Azure PHP Website][running-app]
 
+<div chunk="../../Shared/Chunks/create-account-and-websites-note.md" />
+
 ##Prerequisites
 
 1. Download the Tasklist application files from here: [http://go.microsoft.com/fwlink/?LinkId=252504][tasklist-sqlazure-download]. The Tasklist application is a simple PHP application that allows you to add, mark complete, and delete items from a task list. Task list items are stored in a SQL Database (SQL Server Express for local testing). The application consists of these files:
@@ -37,16 +39,6 @@ By following this tutorial, you will build a simple Tasklist web application in 
 		2> GO
 
 	This step is only necessary if you want to test your application locally.
-
-<h2 id="CreateWebsite">Create a Windows Azure Website and SQL Database</h2>
-
-### Create a Windows Azure account
-
-<div chunk="../../Shared/Chunks/create-azure-account.md" />
-
-### Enable Windows Azure Web Sites
-
-<div chunk="../../Shared/Chunks/antares-iaas-signup.md" />
 
 ## Create a website and SQL Database
 
@@ -214,7 +206,7 @@ You've seen how to create and deploy a web site from WebMatrix to Windows Azure.
 [sql-database-editions]: http://msdn.microsoft.com/en-us/library/windowsazure/ee621788.aspx
 [php-site-from-template]: ../../Shared/Media/php_site_from_template.png
 [php-empty-site-template-installed]: ../../Shared/Media/php_empty_site_template_installed.png
-[go-to-dashboard]: ../Media/go_to_dashboard.jpg
+[go-to-dashboard]: ../Media/go_to_dashboard.png
 [download-publish-profile]: ../Media/download-publish-profile.png
 [download-site]: ../Media/download-site-1.png
 [site-from-template]: ../Media/site-from-template.png

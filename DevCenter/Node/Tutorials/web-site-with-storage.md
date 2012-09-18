@@ -39,11 +39,7 @@ Before following the instructions in this article, you should ensure that you ha
 
 * A web browser
 
-##Enable the Windows Azure Web Site feature
-
-If you do not already have a Windows Azure subscription, you can sign up [for free]. After signing up, follow these steps to enable the Windows Azure Web Site feature.
-
-<div chunk="../../Shared/Chunks/antares-iaas-signup.md"></div>
+<div chunk="../../Shared/Chunks/create-account-and-websites-note.md" />
 
 ##Create a storage account
 
@@ -659,7 +655,7 @@ While the steps in this article describe using the Table Service to store inform
 [portal-quick-create-storage]: ../../Shared/Media/quick-storage.png
 [portal-storage-access-keys]: ../../Shared/Media/manage-access-keys.png
 [portal-storage-manage-keys]: ../../Shared/Media/manage-keys-button.png
-[go-to-dashboard]: ../../Shared/Media/go_to_dashboard.jpg
+[go-to-dashboard]: ../../Shared/Media/go_to_dashboard.png
 [web-configure]: ../media/sql-task-configure.png
 [app-settings-save]: ../media/savebutton.png
 [app-settings]: ../media/storage-tasks-appsettings.png
