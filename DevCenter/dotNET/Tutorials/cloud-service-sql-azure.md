@@ -1,5 +1,7 @@
-﻿<div chunk="../chunks/article-left-menu.md" />
+<properties linkid="develop-dotnet-cloud-service-with-sql-database" urlDisplayName="Cloud Service with SQL Database" pageTitle=".NET cloud service with SQL Database - Windows Azure tutorial" metaKeywords="Azure ASP.NET web site, ASP.NET SQL database, SQL database cloud services" metaDescription="Create an ASP.NET website with a SQL database and deploy it to Windows Azure for hosting using Windows Azure Cloud Services. " metaCanonical="" disqusComments="1" umbracoNaviHide="1" />
 
+
+<div chunk="../chunks/article-left-menu.md" />
 # Deploying an ASP.NET Web Application to a Windows Azure Cloud Service and SQL Database
 
 This tutorial shows how to deploy an ASP.NET web application to a Windows Azure Cloud Service by using the Windows Azure SDK for .NET in Visual Studio 2012 or Visual Web 2012 for Web Express. You can open a Windows Azure account for free, and if you don't already have Visual Studio 2012, the SDK automatically installs Visual Studio 2012 for Web Express. So you can start developing for Windows Azure entirely for free.
@@ -402,24 +404,13 @@ when it is deployed to the cloud.
           <add name="DefaultConnection" connectionString="data source=<serverName>.database.windows.net;Initial Catalog=ToDoDb;User ID=<user>@<serverName>;Password=<password>;Encrypt=true;Trusted_Connection=false;MultipleActiveResultSets=True" providerName="System.Data.SqlClient" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
         </connectionStrings>
 
-<div class="dev-callout-new">
-    <strong>Note <span>Click to collapse</span></strong>
-    <div class="dev-callout-content">
-        <p>The administrative user has access to all the databases on
-    the server. To create a SQL Database user with more restricted
-    permissions, follow the steps in [Adding Users to Your SQL Database Instance][]. Then, modify the connection string in Web.Release.config to use the
-    newly created user and password instead of the administrative user
-    and password.</p>
-    </div>
-</div>  
+The administrative user has access to all the databases on
+the server. To create a SQL Database user with more restricted
+permissions, follow the steps in [Adding Users to Your SQL Database Instance][]. Then, modify the connection string in Web.Release.config to use the
+newly created user and password instead of the administrative user
+and password.
 
-<div class="dev-callout-new">
-    <strong>Note <span>Click to collapse</span></strong>
-    <div class="dev-callout-content">
-        <p>In order to use provider-based features such as membership, profile, role manager, and session state, the application must use the Microsoft ASP.NET universal providers. To use the universal providers with SQL Server Express (the default for Visual Studio 2010), use the [Microsoft.AspNet.Providers][UniversalProviders] NuGet package. To use the universal providers with SQL Server Express LocalDB (the default for Visual Studio 2012), use the [Microsoft.AspNet.Providers.LocalDB][UniversalProvidersLocalDB] NuGet package.  The project templates for MVC and Web Forms install the appropriate NuGet package by default.</p>
-    </div>
-</div>  
-  
+In order to use provider-based features such as membership, profile, role manager, and session state, the application must use the Microsoft ASP.NET universal providers. To use the universal providers with SQL Server Express (the default for Visual Studio 2010), use the [Microsoft.AspNet.Providers][UniversalProviders] NuGet package. To use the universal providers with SQL Server Express LocalDB (the default for Visual Studio 2012), use the [Microsoft.AspNet.Providers.LocalDB][UniversalProvidersLocalDB] NuGet package.  In Visual Studio 2012, the project templates for MVC and Web Forms install the appropriate NuGet package by default.
 
 <h2><a name="running"></a><span class="short-header">Run the app</span>Run the application in the cloud</h2>
 
@@ -552,3 +543,6 @@ that is hosted in a Windows Azure Cloud Service and stores data in SQL Database.
   [107]: ../media/cloudservice107.png
   [SQL Database How-to Guide]: http://www.windowsazure.com/en-us/develop/net/how-to-guides/sql-database/
   [Multi-tier Application Tutorial]: http://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-application/
+  [UniversalProviders]: http://nuget.org/packages/Microsoft.AspNet.Providers
+  [UniversalProvidersLocalDB]: http://nuget.org/packages/Microsoft.AspNet.Providers.LocalDB
+

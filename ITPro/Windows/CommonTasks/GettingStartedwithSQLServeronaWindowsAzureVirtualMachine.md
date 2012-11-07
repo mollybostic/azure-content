@@ -1,4 +1,6 @@
-<properties umbracoNaviHide="0" pageTitle="Getting started with SQL Server on a Windows Azure virtual machine" metaKeywords="Windows Azure, cloud service, configure cloud service" metaDescription="Windows Tutorials." linkid="manage-windows-how-to-guide-storage-accounts" urlDisplayName="How to: storage accounts" headerExpose="" footerExpose="" disqusComments="1" />
+<properties linkid="manage-windows-common-tasks-sql-server-on-a-vm" urlDisplayName="Get started with SQL Server" pageTitle="Get started with SQL Server on a virtual machine in Windows Azure" metaKeywords="Azure virtual machines, Azure gallery, Azure SQL Server images, Azure Windows images, Azure VM" metaDescription="Learn about Windows Azure virtual machines, including the Windows Server 2008 R2 and SQL Server images available in the Windows Azure gallery." metaCanonical="" disqusComments="1" umbracoNaviHide="1" />
+
+
 
 # Getting started with SQL Server on a Windows Azure virtual machine
 
@@ -43,7 +45,7 @@ This SQL Server installation contains the following components.
 * Analysis Services
 * Integration Services
 * Reporting Services (configured in Native mode)
-* AlwaysOn Availability Groups are available in SQL Server 2012 but need additional configuration before they can be used.
+* AlwaysOn Availability Groups are available in SQL Server 2012 but need additional configuration before they can be used. See below for more information.
 * Replication
 * Full-Text and Semantic Extractions for Search (Semantic Extractions in SQL Server 2012 only)
 * Data Quality Services (SQL Server 2012 only)
@@ -102,6 +104,10 @@ Provide a connection string similar to
 	&lt;add name ="connection" connectionString ="Data Source=VM_Name;Integrated Security=true;" providerName ="System.Data.SqlClient"/&gt;
 
 where VM_Name is the name you provided for this virtual machine during setup.
+ 
+### Configuring AlwaysOn Availability Groups
+
+AlwaysOn availability groups are currently supported in Windows Azure Virtual Machine Preview Release without Listeners. An availability group that has one or more replicas in Windows Azure Virtual Machines cannot have a listener. Before adding a replica on a Windows Azure Virtual Machine to an on-premises availability group, drop the availability group listener. If the availability group has a listener, a failover to the replica on the Windows Azure Virtual Machine will fail. For more information about configuring AlwaysOn availability groups, see SQL Server Books Online.
 
 <h2 id="Next">Next steps</h2>
 

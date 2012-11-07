@@ -1,157 +1,127 @@
-<properties linkid="mobile-get-started-with-users-dotnet" urldisplayname="Mobile Services" headerexpose="" pagetitle="Get started with authentication in Mobile Services" metakeywords="Get started Windows Azure Mobile Services, mobile devices, Windows Azure, mobile, Windows 8, WinRT app" footerexpose="" metadescription="Get started using Windows Azure Mobile Services in your Windows Store apps." umbraconavihide="0" disquscomments="1"></properties>
+<properties linkid="develop-mobile-tutorials-get-started-with-users-dotnet" urlDisplayName="Get Started with Users" pageTitle="Get started with authentication - Windows Azure Mobile Services" metaKeywords="" metaDescription="Learn how to use authentication with Windows Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" />
+
+
 
 <div class="umbMacroHolder" title="This is rendered content from macro" onresizestart="return false;" umbpageid="14798" ismacro="true" umb_chunkname="MobileArticleLeft" umb_chunkpath="devcenter/Menu" umb_macroalias="AzureChunkDisplayer" umb_hide="0" umb_modaltrigger="" umb_chunkurl="" umb_modalpopup="0"><!-- startUmbMacro --><span><strong>Azure Chunk Displayer</strong><br />No macro content available for WYSIWYG editing</span><!-- endUmbMacro --></div>
 
-<!--
-<div class="dev-center-os-selector">
-  <a href="/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/" title=".NET client version" class="current">C# and XAML</a>
-  <a href="/en-us/develop/mobile/tutorials/get-started-with-users-js/" title="JavaScript client version">JavaScript and HTML</a>
-  <span>Tutorial</span>
-</div>
--->
+<!--<div class="dev-center-os-selector">
+  <a href="/en-us/develop/mobile/tutorials/get-started-with-users-dotnet/" title="Windows Store version" class="current">Windows Store</a>
+  <a href="/en-us/develop/mobile/tutorials/get-started-with-users-ios/" title="iOS version">iOS</a>
+</div>-->
 
 # Get started with authentication in Mobile Services
+<div class="dev-center-tutorial-selector"> 
+	<a href="/en-us/develop/mobile/tutorials/get-started-with-users-dotnet" title="Windows Store C#" class="current">Windows Store C#</a>
+	<a href="/en-us/develop/mobile/tutorials/get-started-with-users-js" title="Windows Store JavaScript">Windows Store JavaScript</a>
+	<a href="/en-us/develop/mobile/tutorials/get-started-with-users-wp8" title="Windows Phone 8">Windows Phone 8</a> 
+	<a href="/en-us/develop/mobile/tutorials/get-started-with-users-ios" title="iOS">iOS</a> 
+</div>
 
-Language: **C# and XAML**
 
-This topic shows you how to authenticate users in Windows Azure Mobile Services from a Windows Store app.  In this tutorial, you add authentication to the quickstart project using Live Connect. When successfully authenticated by Live Connect, a logged-in user is welcomed by name and the user ID value is displayed.  
+This topic shows you how to authenticate users in Windows Azure Mobile Services from your app.  In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.  
 
-This tutorial walks you through these basic steps to enable Live Connect authentication:
+This tutorial walks you through these basic steps to enable authentication in your app:
 
 1. [Register your app for authentication and configure Mobile Services]
 2. [Restrict table permissions to authenticated users]
 3. [Add authentication to the app]
 
-This tutorial requires the [Live SDK for Windows], and you must have already completed the tutorial [Get started with Mobile Services].
+This tutorial is based on the Mobile Services quickstart. You must also first complete the tutorial [Get started with Mobile Services]. 
 
-## <a name="register"></a>Register your app
+<div class="dev-callout"><b>Note</b>
+	<p>This tutorial demonstrates the basic method provided by Mobile Services to authenticate users by using a variety of identity providers. This method is easy to configure and supports multiple providers. However, this method also requires users to log-in every time your app starts. To instead use Live Connect to provide a single sign-on experience in your Windows Store app, see the topic <a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet">Single sign-on for Windows Store apps by using Live Connect</a>.</p>
+</div>
 
-To be able to authenticate users, you must register your Windows Store app at the Live Connect Developer Center. You must then register the client secret to integrate Live Connect with Mobile Services.
+<h2><a name="register"></a><span class="short-header">Register your app</span>Register your app for authentication and configure Mobile Services</h2>
 
-1. In Visual Studio 2012 Express for Windows 8, open the project that you created when you completed the tutorial [Get started with Mobile Services].
+To be able to authenticate users, you must register your app with an identity provider. You must then register the provider-generated client secret with Mobile Services.
 
-2. In solution explorer, double-click the file **Package.appxmanifest**, click the **Packaging** tab, and then make a note of the values of **Package display name** and **Publisher**. 
-
-  ![][0]
-
-  You will need these values to register your app.
-
-3. Navigate to the [Windows Push Notifications & Live Connect] page, log on with your Microsoft account, if needed, and then follow the instructions to register your app.
-
-4. Make a copy of the **Package name** value generated by the site after you have successfully registered your app.
-
-   ![][8]
-
-4. In Visual Studio, paste the copied value in **Package name** in the application manifest.
-
-   ![][1]
-
-5. Log on to the [Windows Azure Management Portal], click **Mobile Services**, and then click your app.
-
-   ![][2]
-
-6. Click the **Dashboard** tab and make a note of the **Site URL** value.
-
-   ![][9]
-
-    You will use this value to define the redirect domain.
-
-2. Navigate to the [My Apps dashboard] in Live Connect Developer Center and click on your app in the **My applications** list.
-
-   ![][6] 
-
-3. Click **Edit settings**, then **API Settings** and make a note of the value of **Client secret**. 
-
-   ![][7]
-
-   You must provide this value to Mobile Services to be able to use Live Connect for authentication. 
-
-    <div class="dev-callout"><b>Security Note</b>
-	<p>The client secret is an important security credential. Do not share the client secret with anyone or distribute it with your app.</p>
-    </div>
-
-4. In **Redirect domain**, enter the URL of your mobile service from Step 7, and then click **Save**.
-
-6. Back in the Management Portal, click the **Identity** tab, enter the **Client secret** obtained from Live Connect, and click **Save**.
-
-   ![][3]
-
-Both your mobile service and your app are now configured to work with Live Connect.
-
-## <a name="permissions"></a>Restrict permissions
-
-1. In the Management Portal, click the **Data** tab, and then click the **TodoItem** table. 
+1. Log on to the [Windows Azure Management Portal], click **Mobile Services**, and then click your mobile service.
 
    ![][4]
 
-2. Click the **Permissions** tab, set all permissions to **Only authenticated users**, and then click **Save**. This will ensure that all operations against the **TodoItem** table require an authenticated user. This also simplifies the scripts in the next tutorial because they will not have to allow for the possibility of anonymous users.
+2. Click the **Dashboard** tab and make a note of the **Site URL** value.
 
    ![][5]
 
+    You may need to provide this value to the identity provider when you register your app.
+
+3. Choose a supported identity provider from the list below and follow the steps to register your app with that provider:
+
+ - <a href="/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/" target="_blank">Microsoft Account</a>
+ - <a href="/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/" target="_blank">Facebook login</a>
+ - <a href="/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/" target="_blank">Twitter login</a>
+ - <a href="/en-us/develop/mobile/how-to-guides/register-for-google-authentication/" target="_blank">Google login</a>
+
+    Remember to make a note of the client identity and secret values generated by the provider.
+
+    <div class="dev-callout"><b>Security Note</b>
+	<p>The provider-generated secret is an important security credential. Do not share this secret with anyone or distribute it with your app.</p>
+    </div>
+
+4. Back in the Management Portal, click the **Identity** tab, enter the app identifier and shared secret values obtained from your identity provider, and click **Save**.
+
+   ![][13]
+
+Both your mobile service and your app are now configured to work with your chosen authentication provider.
+
+<h2><a name="permissions"></a><span class="short-header">Restrict permissions</span>Restrict permissions to authenticated users</h2>
+
+1. In the Management Portal, click the **Data** tab, and then click the **TodoItem** table. 
+
+   ![][14]
+
+2. Click the **Permissions** tab, set all permissions to **Only authenticated users**, and then click **Save**. This will ensure that all operations against the **TodoItem** table require an authenticated user. This also simplifies the scripts in the next tutorial because they will not have to allow for the possibility of anonymous users.
+
+   ![][15]
+
 3. In Visual Studio 2012 Express for Windows 8, open the project that you created when you completed the tutorial [Get started with Mobile Services]. 
 
-4. Press the F5 key to run this quickstart-based app; verify that an exception with a status code of 401 (Unauthorized) is raised. 
+4. Press the F5 key to run this quickstart-based app; verify that an unhandled exception with a status code of 401 (Unauthorized) is raised after the app starts. 
    
-   This happens because the app is accessing Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
+   This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
-Next, you will update the app to authenticate users with Live Connect before requesting resources from the mobile service.
+Next, you will update the app to authenticate users before requesting resources from the mobile service.
 
-## <a name="add-authentication"></a>Add authentication
+<h2><a name="add-authentication"></a><span class="short-header">Add authentication</span>Add authentication to the app</h2>
 
-1. Download and install the [Live SDK for Windows].
+5. Open the project file mainpage.xaml.cs and add the following using statement:
 
-2. In the project in Visual Studio, add a reference to the Live SDK.
-
-5. Open the project file mainpage.xaml.cs and add the following using statements:
-
-        using Microsoft.Live;
         using Windows.UI.Popups;
 
-6. Add the following code snippet that creates a member variable for storing the current Live Connect session and a method to handle the authentication process:
+6. Add the following code snippet to the MainPage class:
 	
-        private LiveConnectSession session;
+        private MobileServiceUser user;
         private async System.Threading.Tasks.Task Authenticate()
         {
-            LiveAuthClient liveIdClient = new LiveAuthClient("<< INSERT REDIRECT DOMAIN HERE >>");
-
-            while (session == null)
+            while (user == null)
             {
-                // Force a logout to make it easier to test with multiple Microsoft Accounts
-                if (liveIdClient.CanLogout)
-                    liveIdClient.Logout();
-	
-                LiveLoginResult result = await liveIdClient.LoginAsync(new[] { "wl.basic" });
-                if (result.Status == LiveConnectSessionStatus.Connected)
+                string message;
+                try
                 {
-                    session = result.Session;
-                    LiveConnectClient client = new LiveConnectClient(result.Session);
-                    LiveOperationResult meResult = await client.GetAsync("me");
-                    MobileServiceUser loginResult = await App.MobileService.LoginAsync(result.Session.AuthenticationToken);
-	
-                    string title = string.Format("Welcome {0}!", meResult.Result["first_name"]);
-                    var message = string.Format("You are now logged in - {0}", loginResult.UserId);
-                    var dialog = new MessageDialog(message, title);
-                    dialog.Commands.Add(new UICommand("OK"));
-                    await dialog.ShowAsync();
+                    user = await App.MobileService
+                        .LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                    message = 
+                        string.Format("You are now logged in - {0}", user.UserId);
                 }
-                else
+                catch (InvalidOperationException)
                 {
-                    session = null;
-                    var dialog = new MessageDialog("You must log in.", "Login Required");
-                    dialog.Commands.Add(new UICommand("OK"));
-                    await dialog.ShowAsync();
+                    message = "You must log in. Login Required";
                 }
+                        
+                var dialog = new MessageDialog(message);
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
             }
-         }
+        }
+
+    This creates a member variable for storing the current user and a method to handle the authentication process. The user is authenticated by using a Facebook login.
 
     <div class="dev-callout"><b>Note</b>
-	<p>This code forces a logout, when possible, to make sure that the user is prompted for credentials each time the application runs. This makes it easier to test the application with different Microsoft Accounts to ensure that the authentication is working correctly. This mechanism will only work if the logged in user does not have a connected Microsoft account.</p>
+	<p>If you are using an identity provider other than Facebook, change the value of <strong>MobileServiceAuthenticationProvider</strong> above to the value for your provider.</p>
     </div>
-	
 
-7. Update string _<< INSERT REDIRECT DOMAIN HERE >>_ from the previous step with the redirect domain that was specified when setting up the app in Live Connect, in the format **https://_service-name_.azure-mobile.net/**.
-
-8. Replace the existing **OnNavigatedTo** event handler with the handler that calls the new **Authenticate** method:
+8. Replace the existing **OnNavigatedTo** method override with the following method that calls the new **Authenticate** method:
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -159,7 +129,7 @@ Next, you will update the app to authenticate users with Live Connect before req
             RefreshTodoItems();
         }
 		
-9. Press the F5 key to run the app and sign into Live Connect with your Microsoft Account. 
+9. Press the F5 key to run the app and sign into the app with your chosen identity provider. 
 
    When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
@@ -174,21 +144,29 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Next Steps]:#next-steps
 
 <!-- Images. -->
-[0]: ../Media/mobile-app-manifest-initial.png
-[1]: ../Media/mobile-app-manifest-final.png
-[2]: ../Media/mobile-services-selection.png
-[3]: ../Media/mobile-identity-tab.png
-[4]: ../Media/mobile-portal-data-tables.png
-[5]: ../Media/mobile-portal-change-table-perms.png
+[0]: ../Media/mobile-services-submit-win8-app.png
+[1]: ../Media/mobile-services-win8-app-name.png
+[2]: ../Media/mobile-services-store-association.png
+[3]: ../Media/mobile-services-select-app-name.png
+[4]: ../Media/mobile-services-selection.png
+[5]: ../Media/mobile-service-uri.png
 [6]: ../Media/mobile-live-connect-apps-list.png
 [7]: ../Media/mobile-live-connect-app-api-settings.png
-[8]: ../Media/mobile-app-wns-completed.png
-[9]: ../Media/mobile-service-uri.png
+[8]: ../Media/mobile-services-win8-app-advanced.png
+[9]: ../Media/mobile-services-win8-app-connect-redirect.png
+[10]: ../Media/mobile-services-win8-app-connect-redirect-uri.png
+[11]: ../Media/mobile-services-win8-app-push-connect.png
+[12]: ../Media/mobile-services-win8-app-connect-auth.png
+[13]: ../Media/mobile-identity-tab.png
+[14]: ../Media/mobile-portal-data-tables.png
+[15]: ../Media/mobile-portal-change-table-perms.png
+[16]: ../Media/mobile-add-reference-live-dotnet.png
 
 <!-- URLs. -->
-[Windows Push Notifications & Live Connect]: http://go.microsoft.com/fwlink/?LinkID=257677
-[My Apps dashboard]: http://go.microsoft.com/fwlink/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/?LinkId=262253
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
+[Single sign-on for Windows Store apps by using Live Connect]: ./mobile-services-single-sign-on-win8-dotnet.md
 [Get started with Mobile Services]: ./mobile-services-get-started.md
 [Get started with data]: ./mobile-services-get-started-with-data-dotnet.md
 [Get started with authentication]: ./mobile-services-get-started-with-users-dotnet.md

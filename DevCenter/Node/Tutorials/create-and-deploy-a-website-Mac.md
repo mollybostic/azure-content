@@ -1,4 +1,6 @@
-<properties linkid="dev-nodejs-website" urldisplayname="Node.js Website" headerexpose="" pagetitle="Node.js Application using a Windows Azure Website" metakeywords="Azure Node.js tutorial, Azure Node.js, Azure Node.js tutorial" footerexpose="" metadescription="A tutorial that demonstrates building and deploying a Node.js application to a Windows Azure Website" umbraconavihide="0" disquscomments="1"></properties>
+<properties linkid="develop-node-create-a-website-mac" urlDisplayName="Web site" pageTitle="Create a Node.js web site on Mac - Windows Azure tutorials" metaKeywords="Azure create website Node, Azure deploy website Node, website Node.js, Node website" metaDescription="Learn how to build and deploy a Node.js web site in Windows Azure. Sample code is written in Java." metaCanonical="" disqusComments="1" umbracoNaviHide="0" />
+
+
 
 #Build and deploy a Node.js web site to Windows Azure
 
@@ -50,13 +52,13 @@ Follow these steps to create a Windows Azure Web Site, and then enable Git publi
 
 ##Build and test your application locally
 
-In this section, you will create a **server.js** file containing the 'hello world' example from [nodejs.org]. This example has been modified from the original example by adding process.env.port as the port to listen on when running in a Windows Azure Web Site.
+In this section, you will create a **server.js** file containing the 'hello world' example from [nodejs.org]. This example has been modified from the original example by adding process.env.PORT as the port to listen on when running in a Windows Azure Web Site.
 
 1. Using a text editor, create a new file named **server.js** in the **helloworld** directory. If the **helloworld** directory does not exist, create it.
 2. Add the following as the contents of the **server.js** file, and then save it:
 
         var http = require('http')
-        var port = process.env.port || 1337;
+        var port = process.env.PORT || 1337;
         http.createServer(function(req, res) {
           res.writeHead(200, { 'Content-Type': 'text/plain' });
           res.end('Hello World\n');
@@ -134,7 +136,7 @@ While the steps in this article use the Windows Azure Portal to create a web sit
 * [Windows Azure PowerShell]
 * [Windows Azure Command-Line Tools for Mac and Linux]
 
-[Windows Azure PowerShell]: en-us/develop/nodejs/how-to-guides/powershell-cmdlets/
+[Windows Azure PowerShell]: /en-us/develop/nodejs/how-to-guides/powershell-cmdlets/
 [Node]: http://nodejs.org/
 [nodejs.org]: http://nodejs.org/
 [Git]: http://git-scm.com/

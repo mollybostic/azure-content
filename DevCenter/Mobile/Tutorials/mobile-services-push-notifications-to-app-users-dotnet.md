@@ -1,4 +1,6 @@
-<properties linkid="mobile-services-push-notifications-to-app-users-dotnet" urldisplayname="Mobile Services" headerexpose="" pagetitle="Push notifications to users by using Mobile Services" metakeywords="push notifications with Mobile Services, mobile devices, Windows Azure, mobile, Windows 8, WinRT app, push notifications" footerexpose="" metadescription="Push notifications to your Windows Store app users by using Windows Azure Mobile Services." umbraconavihide="0" disquscomments="1"></properties>
+<properties linkid="develop-mobile-tutorials-push-notifications-to-users-dotnet" urlDisplayName="Push Notifications to Users" pageTitle="Push Notifications to app users - Windows Azure Mobile Services" metaKeywords="" metaDescription="Learn how to push notifications to app users in Windows Store apps that use Windows Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" />
+
+
 
 <div class="umbMacroHolder" title="This is rendered content from macro" onresizestart="return false;" umbpageid="14827" ismacro="true" umb_chunkname="MobileArticleLeft" umb_chunkpath="devcenter/Menu" umb_macroalias="AzureChunkDisplayer" umb_hide="0" umb_modaltrigger="" umb_chunkurl="" umb_modalpopup="0"><!-- startUmbMacro --><span><strong>Azure Chunk Displayer</strong><br />No macro content available for WYSIWYG editing</span><!-- endUmbMacro --></div>
 
@@ -11,8 +13,12 @@
 -->
 
 # Push notifications to users by using Mobile Services
+<div class="dev-center-tutorial-selector"> 
+	<a href="/en-us/develop/mobile/tutorials/push-notifications-to-users-dotnet" title="Windows Store C#" class="current">Windows Store C#</a>
+	<a href="/en-us/develop/mobile/tutorials/push-notifications-to-users-js" title="Windows Store JavaScript">Windows Store JavaScript</a>
+    <a href="/en-us/develop/mobile/tutorials/push-notifications-to-users-wp8" title="Windows Phone 8">Windows Phone 8</a>
+</div>
 
-Language: **C# and XAML**
 
 This topic extends the [previous push notification tutorial][Get started with push notifications] by adding a new table to store Windows Push Notification Service (WNS) channel URIs. These channels can then be used to send push notifications to users of the Windows Store app.  
 

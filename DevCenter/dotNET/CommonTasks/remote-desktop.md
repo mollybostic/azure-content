@@ -1,4 +1,6 @@
-<properties linkid="dev-net-commons-tasks-remote-desktop" urldisplayname="Remote Desktop" headerexpose="" pagetitle="Enable Remote Desktop - .NET - Develop" metakeywords="Azure remote access, Azure remote connection, Azure VM access, Azure virtual machine access, Azure .NET remote access, Azure .NET remote connection, Azure .NET VM access, Azure .NET virtual machine access, Azure C# remote access, Azure C# remote connection, Azure C# VM access, Azure C# virtual machine access, Azure Visual Studio remote access, Azure Visual Studio remote connection" footerexpose="" metadescription="Learn how to enable remote-desktop access for the virtual machines hosting your Windows Azure application. " umbraconavihide="0" disquscomments="1"></properties>
+<properties linkid="dev-net-commons-tasks-remote-desktop" urlDisplayName="Remote Desktop" pageTitle="Enable remote desktop for cloud services - Windows Azure" metaKeywords="Azure remote access, Azure remote connection, Azure VM access, Azure virtual machinesAzure .NET remote access,  Azure C# remote access, Azure Visual Studio remote access" metaDescription="Learn how to enable remote-desktop access for the virtual machines hosting your Windows Azure application. " metaCanonical="" disqusComments="1" umbracoNaviHide="0" />
+
+
 
 # Enabling Remote Desktop in Windows Azure with Visual Studio
 
@@ -77,15 +79,18 @@ application.
     <div class="dev-callout-new-collapsed">
     <strong>Need to set up publishing credentials? <span>Click to expand</span></strong>
     <div class="dev-callout-content">
-        <p>TBD -- details here.</p>
+        <p><ol>
+           <li>On the <strong>Windows Azure Publish Sign In</strong> page, click the <strong>Sign in to download credentials</strong> link. You will be prompted to sign in to the Windows Azure Management Portal, and then to download a .publishsettings file.</li>
+           <li>Save the .publishsettings file locally.</li>
+           <li>Click the <strong>Import</strong> button and select the .publishsettings file you just downloaded.</li>
+           <li>Back on the <strong>Windows Azure Publish Sign In</strong> page, the subscription associated with the .publishsettings file you just imported will be selected. Click <strong>Next</strong> to continue.
+           </ol></p>
     </div>
-</div>  
+    </div>  
 
-
-3.  On the **Windows Azure Publish Settings** page, select the hosted
-    service in which to publish the application, production or staging
+3.  On the **Windows Azure Publish Settings** page, select the cloud service to which you want to deploy, the production or staging
     environment, the build configuration, and the service configuration.
-    Make sure **Remote desktop connections for all roles** is selected,
+    Make sure **Enable Remote Desktop for all roles** is selected,
     and then click **Next**.
 4.  On the **Windows Azure Publish Summary** page, review the settings,
     and then click **Publish**.
