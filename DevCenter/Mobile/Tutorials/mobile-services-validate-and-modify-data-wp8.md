@@ -58,6 +58,10 @@ It is always a good practice to validate the length of data that is submitted by
 
     This script checks the length of the **TodoItem.text** property and sends an error response when the length exceeds 10 characters. Otherwise, the **execute** method is called to complete the insert.
 
+    <div class="dev-callout"> 
+	<b>Note</b> 
+	<p>You can remove a registered script on the <strong>Script</strong> tab by clicking <strong>Clear</strong> and then <strong>Save</strong>.</p></div>	
+
 ## <a name="update-client-validation"></a>Update the client
 
 Now that the mobile service is validating data and sending error responses, you need to update your app to be able to handle error responses from validation.
@@ -67,10 +71,6 @@ Now that the mobile service is validating data and sending error responses, you 
 2. Press the **F5** key to run the app, then type text longer than 10 characters in the textbox and click **Save**.
 
    Notice that the app raises an unhandled **MobileServiceInvalidOperationException** as a result of the 400 response (Bad Request) returned by the mobile service.
-
-    <div class="dev-callout"> 
-	<b>Note</b> 
-	<p>You can remove a registered script on the <strong>Script</strong> tab by clicking <strong>Clear</strong> and then <strong>Save</strong>.</p></div>	
 
 6. 	Open the file MainPage.xaml.cs, then replace the existing **InsertTodoItem** method with the following:
 
@@ -187,7 +187,7 @@ You have completed this working with data tutorial.
 
 Now that you have completed this tutorial, consider continuing on with the final tutorial in the data series: 
 
-Server scripts are also used when authorizing users and for sending push notifications. For more information see the following tutorials:
+Server scripts are also used when authorizing users and for sending push notifications. For more information see the following tutorials: [Refine queries with paging].
 
 * [Authorize users with scripts]
   <br/>Learn how to filter data based on the ID of an authenticated user.

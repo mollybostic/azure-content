@@ -4,16 +4,9 @@
 
 <div class="umbMacroHolder" title="This is rendered content from macro" onresizestart="return false;" umbpageid="14798" ismacro="true" umb_chunkname="MobileArticleLeft" umb_chunkpath="devcenter/Menu" umb_macroalias="AzureChunkDisplayer" umb_hide="0" umb_modaltrigger="" umb_chunkurl="" umb_modalpopup="0"><!-- startUmbMacro --><span><strong>Azure Chunk Displayer</strong><br />No macro content available for WYSIWYG editing</span><!-- endUmbMacro --></div>
 
-<!--<div class="dev-center-os-selector">
-  <a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/" title=".NET client version">C# and XAML</a>
-  <a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-js/" title="JavaScript client version" class="current">JavaScript and HTML</a>
-  <span>Tutorial</span>
-</div>-->
-
 # Get started with authentication in Mobile Services for Windows Store
 <div class="dev-center-tutorial-selector"> 
-	<a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows Store C#</a>
-	<a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a>
+	<a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-dotnet" title="Windows Store C#">Windows Store C#</a><a href="/en-us/develop/mobile/tutorials/single-sign-on-windows-8-js" title="Windows Store JavaScript" class="current">Windows Store JavaScript</a><a href="/en-us/develop/mobile/tutorials/single-sign-on-wp8" title="Windows Phone">Windows Phone</a>
 </div>	
 
 
@@ -205,7 +198,7 @@ Next, you will update the app to authenticate users with Live Connect before req
 
 ## <a name="next-steps"> </a>Next steps
 
-In the next tutorial, [Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+In the next tutorial, [Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. For information about how to use other identity providers for authentication, see [Get started with authentication].
 
 <!-- Anchors. -->
 [Register your app for authentication and configure Mobile Services]: #register
@@ -227,7 +220,7 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [10]: ../Media/mobile-services-win8-app-connect-redirect-uri.png
 [11]: ../Media/mobile-services-win8-app-push-connect.png
 [12]: ../Media/mobile-services-win8-app-connect-auth.png
-[13]: ../Media/mobile-identity-tab.png
+[13]: ../Media/mobile-identity-tab-ma-only.png
 [14]: ../Media/mobile-portal-data-tables.png
 [15]: ../Media/mobile-portal-change-table-perms.png
 [16]: ../Media/mobile-add-reference-live-js.png
@@ -236,11 +229,11 @@ In the next tutorial, [Authorize users with scripts], you will take the user ID 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
-[Get started with Mobile Services]: ./mobile-services-get-started.md
-[Get started with data]: ./mobile-services-get-started-with-data-js.md
-[Get started with authentication]: ./mobile-services-get-started-with-users-js.md
-[Get started with push notifications]: ./mobile-services-get-started-with-push-js.md
-[Authorize users with scripts]: ./mobile-services-authorize-users-js.md
-[JavaScript and HTML]: ./mobile-services-get-started-with-users-js.md
+[Get started with Mobile Services]: ../tutorials/mobile-services-get-started.md
+[Get started with data]: ../tutorials/mobile-services-get-started-with-data-js.md
+[Get started with authentication]: ../tutorials/mobile-services-get-started-with-users-js.md
+[Get started with push notifications]: ../tutorials/mobile-services-get-started-with-push-js.md
+[Authorize users with scripts]: ../tutorials/mobile-services-authorize-users-js.md
+[JavaScript and HTML]: ../tutorials/mobile-services-get-started-with-users-js.md
 [WindowsAzure.com]: http://www.windowsazure.com/
 [Windows Azure Management Portal]: https://manage.windowsazure.com/

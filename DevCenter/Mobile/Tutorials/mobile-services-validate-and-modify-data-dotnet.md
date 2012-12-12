@@ -1,4 +1,4 @@
-<properties linkid="mobile-services-validate-and-modify-data-dotnet" urldisplayname="Mobile Services" headerexpose="" pagetitle="Validate and modify data in Windows Azure Mobile Services" metakeywords="access and change data, Windows Azure Mobile Services, mobile devices, Windows Azure, mobile, Windows 8, WinRT app" footerexpose="" metadescription="Validate and modify data sent to the Windows Azure Mobile Services using server scripts." umbraconavihide="0" disquscomments="1"></properties>
+<properties linkid="develop-mobile-tutorials-validate-modify-and-augment-data-dotnet" urlDisplayName="Validate and Modify Data" pageTitle="User server scripts to validate and modify data - Mobile Services" metaKeywords="" metaDescription="Learn how to use server scripts to validate, modify, and augment data with Windows Azure Mobile Services." metaCanonical="" disqusComments="1" umbracoNaviHide="1" />
 
 <div class="umbMacroHolder" title="This is rendered content from macro" onresizestart="return false;" umbpageid="14808" ismacro="true" umb_chunkname="MobileArticleLeft" umb_chunkpath="devcenter/Menu" umb_macroalias="AzureChunkDisplayer" umb_hide="0" umb_modaltrigger="" umb_chunkurl="" umb_modalpopup="0"><!-- startUmbMacro --><span><strong>Azure Chunk Displayer</strong><br />No macro content available for WYSIWYG editing</span><!-- endUmbMacro --></div>
 
@@ -56,6 +56,10 @@ It is always a good practice to validate the length of data that is submitted by
 
     This script checks the length of the **TodoItem.text** property and sends an error response when the length exceeds 10 characters. Otherwise, the **execute** method is called to complete the insert.
 
+    <div class="dev-callout"> 
+	<b>Note</b> 
+	<p>You can remove a registered script on the <strong>Script</strong> tab by clicking <strong>Clear</strong> and then <strong>Save</strong>.</p></div>
+
 ## <a name="update-client-validation"></a>Update the client
 
 Now that the mobile service is validating data and sending error responses, you need to update your app to be able to handle error responses from validation.
@@ -64,11 +68,7 @@ Now that the mobile service is validating data and sending error responses, you 
 
 2. Press the **F5** key to run the app, then type text longer than 10 characters in **Insert a TodoItem** and click **Save**.
 
-   Notice that the app raises an unhandled **MobileServiceInvalidOperationException** as a result of the 400 response (Bad Request) returned by the mobile service.
-
-    <div class="dev-callout"> 
-	<b>Note</b> 
-	<p>You can remove a registered script on the <strong>Script</strong> tab by clicking <strong>Clear</strong> and then <strong>Save</strong>.</p></div>	
+   Notice that the app raises an unhandled **MobileServiceInvalidOperationException** as a result of the 400 response (Bad Request) returned by the mobile service.	
 
 6. 	Open the file MainPage.xaml.cs, then add the following **using** statement:
 
@@ -188,7 +188,7 @@ You have completed this working with data tutorial.
 
 ## <a name="next-steps"> </a>Next steps
 
-Now that you have completed this tutorial, consider continuing on with the final tutorial in the data series: 
+Now that you have completed this tutorial, consider continuing on with the final tutorial in the data series: [Refine queries with paging].
 
 Server scripts are also used when authorizing users and for sending push notifications. For more information see the following tutorials:
 

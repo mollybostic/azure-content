@@ -1,4 +1,4 @@
-#Commands for the Windows Azure cmdline tool for Mac and Linux
+#Commands for the Windows Azure cmdline tool for Mac and Linux-ARCHIVED
 
 To use this tool with virtual machines and other new Windows Azure capabilities, sign up for the [free preview](https://account.windowsazure.com/PreviewFeatures).
 
@@ -8,7 +8,7 @@ To install the tool on a Mac, download and run the [Windows Azure SDK installer]
 
 To install the tool on Linux, install the latest version of Node.JS and then use NPM to install:
 
-	sudo npm install azure -g
+	sudo npm install azure-cli -g
 
 Optional parameters are show in square brackets (e.g., [parameter]). All other parameters are required.
 

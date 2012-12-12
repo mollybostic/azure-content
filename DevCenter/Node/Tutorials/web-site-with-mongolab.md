@@ -1,6 +1,7 @@
-<properties linkid="develop-nodejs-tutorials-web-site-with-mongodb-mongolab" urlDisplayName="Web site with MongoDB" pageTitle="Node.js web site with MongoDB on MongoLab - Windows Azure" metaKeywords="" metaDescription="Learn how to create a Node.js Windows Azure Web Site that connects to a MongoDB instance hosted on MongoLab." metaCanonical="" disqusComments="1" umbracoNaviHide="0" />
+﻿<properties linkid="develop-nodejs-tutorials-web-site-with-mongodb-mongolab" urlDisplayName="Web site with MongoDB" pageTitle="Node.js web site with MongoDB on MongoLab - Windows Azure" metaKeywords="" metaDescription="Learn how to create a Node.js Windows Azure Web Site that connects to a MongoDB instance hosted on MongoLab." metaCanonical="" disqusComments="1" umbracoNaviHide="0" />
 
 
+<div chunk="../chunks/article-left-menu.md" />
 
 # Node.js Web Application with Storage on MongoDB (MongoLab)
 This tutorial shows you how to use [MongoDB] to store and access data from a [node] application hosted on Windows Azure. [MongoDB] is a popular open source, high performance NoSQL database. This tutorial assumes that you have some prior experience using node, MongoDB, and [Git].
@@ -330,7 +331,7 @@ The steps in this section use the Windows Azure command-line tools to create a n
 
 To install the command-line tools, use the following command:
 	
-	sudo npm install azure -g
+	sudo npm install azure-cli -g
 
 <div class="dev-callout">
 <strong>Note</strong>

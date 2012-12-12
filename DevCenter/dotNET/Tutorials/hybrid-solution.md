@@ -470,11 +470,12 @@ display data retrieved from your product service.
     		</tr>	
 		}
 
-</table>
+		</table>
 
 
 9.  To verify the accuracy of your work so far, you can press **F6** or
     **Ctrl+Shift+B** to build the project.
+
 
 ### RUN YOUR APPLICATION LOCALLY
 
@@ -730,8 +731,8 @@ Run the application to verify that it works.
     The following steps show you how to stop and delete your
     application.
 
-    1.  Login to the Windows Azure Management Portal,
-        http://windows.azure.com, and click on Hosted Sevices, Storage
+    1.  Login to the [Windows Azure Management Portal],
+        and click on Hosted Sevices, Storage
         Accounts & CDN, then Hosted Services:
 
         ![][33]
