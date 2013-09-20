@@ -5,7 +5,7 @@ Next, you will create a new mobile service to replace the in-memory list for dat
 1. Log into the [Windows Azure Management Portal](https://manage.windowsazure.com/). 
 2.	At the bottom of the navigation pane, click **+NEW**.
 
-	<img src="/media/devcenter/Shared/Media/plus-new.png" />
+	<img src="/media/devcenter/Shared/plus-new.png" />
 
 3.	Expand **Compute** and **Mobile Service**, then click **Create**.
 
