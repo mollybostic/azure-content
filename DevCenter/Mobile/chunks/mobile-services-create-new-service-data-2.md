@@ -30,9 +30,3 @@ To be able to store app data in the new mobile service, you must first create a 
     </div>
 
 You are now ready to use the new mobile service as data storage for the app.
-
-<!-- Anchors. -->
-<!-- Images. -->
-[1]: ../Media/mobile-data-tab-empty.png
-[2]: ../Media/mobile-create-todoitem-table.png
-<!-- URLs. -->
